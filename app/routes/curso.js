@@ -1,3 +1,5 @@
+var verificaAutenticacao = require('../../config/auth');
+
 module.exports = function(app) {
     var controller = app.controllers.curso;
     app.route('/cursos')
