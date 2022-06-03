@@ -15,14 +15,14 @@ module.exports = function(grunt) {
             }
         },
         usemin : {
-            html : 'dist/app/views/**/*.js'
+            html : 'dist/app/views/**/*.ejs'
         },
         useminPrepare : {
             options : {
                 root: 'dist/public',
                 dest: 'dist/public'
             },
-            html : 'dist/app/views/**/*.js'
+            html : 'dist/app/views/**/*.ejs'
         }
     });
     grunt.registerTask('dist', ['clean','copy']);
