@@ -1,11 +1,13 @@
-var verificaAutenticacao = require('../../config/auth');
-
 module.exports = function(app) {
+
+    var verificaAutenticacao = require('../../config/auth');
     var controller = app.controllers.curso;
+   
     app.route('/cursos')
-        .get(controller.listaCursos)
-        .post(controller.salvaCurso);
+        .get(verificaAutenticacao, controller.listaCursos)
+        .post(verificaAutenticacao, controller.salvaCurso)
+
     app.route('/cursos/:id')
-        .get(controller.obtemCurso)
-        .delete(controller.removeCurso);
+        .get(verificaAutenticacao, controller.obtemCurso)
+        .delete(verificaAutenticacao, controller.removeCurso);
 };
