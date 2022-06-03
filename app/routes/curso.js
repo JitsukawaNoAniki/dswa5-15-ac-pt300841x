@@ -1,8 +1,8 @@
 module.exports = function(app) {
-
-    var verificaAutenticacao = require('../../config/auth');
+    
     var controller = app.controllers.curso;
-   
+    var verificaAutenticacao = require('../../config/auth');
+    
     app.route('/cursos')
         .get(verificaAutenticacao, controller.listaCursos)
         .post(verificaAutenticacao, controller.salvaCurso)
