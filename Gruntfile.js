@@ -23,6 +23,12 @@ module.exports = function(grunt) {
                 dest: 'dist/public'
             },
             html : 'dist/app/views/**/*.ejs'
+        },
+        ngAnnotate: {
+            scripts: {
+                expand: true,
+                src: ['dist/public/js/**/*.js']
+            }
         }
     });
     grunt.registerTask('dist', ['clean','copy']);
